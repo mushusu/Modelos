@@ -5,6 +5,9 @@ Created on Tue May 28 10:13:31 2019
 
 @author: mushu
 """
+#Esta es la primera version de prueba de un modelo forestal.
+#La misma parte de una consigna propuesta por un curso de
+#python de la Faculta de Ciencias Exactaws (UBA)
 
 import random
 import numpy as np
@@ -118,6 +121,3 @@ def simulacion(tamano, nrep):
 a = simulacion(100,50)
 
 plt.plot(a)
-asdasd
-#pltasdad
-#asdasd
