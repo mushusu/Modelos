@@ -20,15 +20,15 @@ def bosque(n):
     return res
 
 ##### Ejercicio 2 #####
-# Funcion para establecer la posibilidad de un evento 
+# Funcion para establecer la posibilidad de un evento
 def suceso_aleatorio(prob):
     azar = random.random()
     if azar < prob:
         return True
     else:
         return False
-    
-# A partir de un bosque de tamaño n y un valor p puede generar un 
+
+# A partir de un bosque de tamaño n y un valor p puede generar un
 # arbol en c/celda vacía con probabilidad p
 def brotes(xbos, p=0.6):
     for i in range(len(xbos)):
@@ -52,25 +52,25 @@ def cuantos(bosque):
     print('Lugares vacios: ', celda0)
     print('Arboles vivos: ', celda1)
     print('Arboles quemados: ', celdam1)
-    return 
+    return
 
 ############
-# Consigna 4 
-# Se tira un rayo a ver que pasa, si le cae a un arbol se quema, si le cae a 
+# Consigna 4
+# Se tira un rayo a ver que pasa, si le cae a un arbol se quema, si le cae a
 # una celda vacia no pasa nada
-    
+
 def rayos(bosque, f=0.6):
     for i in range(len(bosque)):
         cond = suceso_aleatorio(f)
         if cond:
             if bosque[i] == 1:
                 bosque[i] = -1
-    return 
+    return
 
 ############
 # Consigna 5
 # Tenemos un bosque con arb quemados, vivos y celdas vacias
-# La idea es que se quemen los restantes arboles vivos que  
+# La idea es que se quemen los restantes arboles vivos que
 # esten al lado de los incendiados:
 
 def propagacion(bosque):
@@ -81,11 +81,7 @@ def propagacion(bosque):
     for i in range(1, len(bosque)):
          if bosque2[i] == 1 and bosque2[i-1] == -1:
             bosque2[i] = -1
-    return 
-
-a = rayos(10, 0.5)    
-
-a = propagacion(a)
+    return
 
 ############
 # Consigna 6
@@ -96,7 +92,7 @@ def limpieza(bosque):
         if bosque[i] == -1:
             bosque[i] = 0
     return bosque
-            
+
 ############
 # Consigna 7
 # acá se acopla todo para simular varios(nrep) incendios
@@ -106,14 +102,14 @@ def simulacion(tamano, nrep):
     viv = []
     while i == 1:
         modelo1 = bosque(tamano)
-        brotes(modelo1) 
+        brotes(modelo1)
         rayos(modelo1, 0.02)
         propagacion(modelo1)
         limpieza(modelo1)
         viv.append(modelo1.count(1))
         i = i + 1
     while i <= nrep:
-        brotes(modelo1) 
+        brotes(modelo1)
         rayos(modelo1, 0.02)
         propagacion(modelo1)
         limpieza(modelo1)
@@ -121,3 +117,6 @@ def simulacion(tamano, nrep):
         i = i + 1
     return viv
 
+a = simulacion(100,50)
+
+plt.plot(a)
