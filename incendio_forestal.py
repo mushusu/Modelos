@@ -39,8 +39,6 @@ def brotes(xbos, p=0.6):
             xbos[i] = 0
     return xbos
 
-a = brotes(10, 0.6)
-
 ############
 # Consigna 3
 # dale un bosque en lista y te tira el estado del bosque en numeros
@@ -120,3 +118,6 @@ def simulacion(tamano, nrep):
 a = simulacion(100,50)
 
 plt.plot(a)
+asdasd
+#pltasdad
+#asdasd
