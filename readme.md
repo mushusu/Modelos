@@ -1,4 +1,4 @@
-# Python Dumpster - musshu
+# Python Dumpster - mushusu
 
 
 - *Figus* -> Se usa de ejemplo el algum de figuritas del último mundial y sirve para calcular cuantos paquetes hay que comprar para poder llenar un album completo.
